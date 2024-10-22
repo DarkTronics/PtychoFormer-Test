@@ -1,0 +1,5 @@
+Models/Weights/
+data_processing/preprocess/
+data_source/Caltech101/101_ObjectCategories/
+data_source/Flickr30k/flickr30k/
+data_source/Flower102/jpg/
