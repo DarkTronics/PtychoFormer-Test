@@ -4,7 +4,9 @@
 
 PtychoFormer is a deep learning model designed for fast and accurate phase retrieval in ptychographic imaging. By leveraging a transformer-based architecture, PtychoFormer processes diffraction patterns efficiently, allowing for real-time imaging applications while maintaining high-quality phase reconstructions. 
 
-The model achieves its speed and accuracy by combining a Transformer Encoder for feature extraction and a Convolutional Decoder for image reconstruction. This architecture allows PtychoFormer to capture global context from diffraction patterns, making it more robust to sparse scans compared to traditional iterative methods.
+The model achieves its speed and accuracy by combining a Transformer Encoder for feature extraction and a Convolutional Decoder for image reconstruction. This architecture allows PtychoFormer to capture global context from diffraction patterns, making it more robust to sparse scans compared to traditional iterative methods. 
+
+Paper: [arXiv:2410.17377](https://arxiv.org/abs/2410.17377)
 
 ### Reconstruction Framework
 
