@@ -177,11 +177,22 @@ class Decoder(nn.Module):
         return x
 
 class PtychoFormer(nn.Module):
-    def __init__(self, in_channels: int = 9, widths: List[int] = [64, 128, 256, 512], 
+    def __init__(self, 
+                 in_channels: int = 25, widths: List[int] = [64, 128, 256, 512], 
                  depths: List[int] = [3, 4, 6, 3], all_num_heads: List[int] = [1, 2, 4, 8],
                  patch_sizes: List[int] = [5, 3, 3, 3], overlap_sizes: List[int] = [2, 2, 2, 2],
                  reduction_ratios: List[int] = [8, 4, 2, 1], mlp_expansions: List[int] = [4, 4, 4, 4],
                  decoder_channels: int = 256, drop_prob: float = 0.1):
+                #  in_channels: int = 9, # input channel number
+                #  widths: List[int] = [32, 64, 128],  # width of model at diff stages, from [64, 128, 256, 512]
+                #  depths: List[int] = [2, 3, 4],      # depth of model, from [3, 4, 6, 3]
+                #  all_num_heads: List[int] = [1, 2, 4], # num of attention head in transformer layer, from [1, 2, 4, 8]
+                #  patch_sizes: List[int] = [5, 3, 3], # bigger patch initially to smaller, from [7, 5, 3]
+                #  overlap_sizes: List[int] = [2, 2, 2], #define stride with which patches are extracted, from [4, 2, 2]
+                #  reduction_ratios: List[int] = [8, 4, 2], #define how much channels are reduced, from [8, 4, 2]
+                #  mlp_expansions: List[int] = [2, 2, 2], #from, [4, 4, 4, 4]
+                #  decoder_channels: int = 128,        # num channel in decoder, upsample and extract encoder, from 256
+                #  drop_prob: float = 0.1): # regularization technique, drop path probability
         super().__init__()
         self.encoder = PtychoFormerEncoder(in_channels, widths, depths, all_num_heads,patch_sizes,
             overlap_sizes, reduction_ratios, mlp_expansions, drop_prob)
